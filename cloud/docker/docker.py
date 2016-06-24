@@ -1301,7 +1301,7 @@ class DockerManager(object):
                 expected_labels[name] = str(value)
 
             actual_labels = {}
-            if type(container['Config']['Labels']) is dict:
+            if isinstance(container['Config']['Labels'], dict):
                 actual_labels = container['Config']['Labels']
             else:
                 for container_label in container['Config']['Labels'] or []:
