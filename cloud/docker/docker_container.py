@@ -1038,7 +1038,7 @@ class TaskParameters(DockerBaseClass):
                         start_port, end_port = exposed_port[0].split('-')
                         if int(start_port) <= port <= int(end_port):
                             match = True
-                    elif exposed_port[0] == port:
+                    elif exposed_port[0] == port and exposed_port[1] == protocol:
                         match = True
                 if not match:
                     exposed.append((port, protocol))
